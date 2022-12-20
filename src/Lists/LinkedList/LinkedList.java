@@ -122,8 +122,10 @@ public class LinkedList<T> implements ListADT<T> {
                 i++; 
             }
             // remove the item if it was found 
-            if (!toRemove.equals(null)) { 
+            if (!toRemove.equals(null)) {
+
                 // NEED TO UPDATE LINKS HERE 
+                
                 size--; 
             }
         }
@@ -139,6 +141,8 @@ public class LinkedList<T> implements ListADT<T> {
      */
     public T getByIndex(int index) {
         
+        // FINISH 
+
         return null;
     }
 
@@ -147,13 +151,31 @@ public class LinkedList<T> implements ListADT<T> {
      * Getting an index is O(n) but can be better
      */
     public int getIndexOf(T item) {
-        
-        return 0;
+        int currIndex = 0; 
+        LinearNode<T> current = head; 
+        // loop through the list until we find the item 
+        while(!current.getElement().equals(null)) { 
+            // return the index if we find the itme we want 
+            if (current.getElement().equals(item)) { 
+                return currIndex; 
+            }
+            current = current.getNext(); 
+            currIndex++; 
+        }
+        return -1;
     }
 
     @Override
     public boolean contains(T item) {
-        
+        LinearNode<T> current = head; 
+        // loop through the list until we hit the end 
+        while (!current.getNext().equals(null)) { 
+            // return true if we find the item we want 
+            if (current.getElement().equals(item)) { 
+                return true; 
+            }
+            current = current.getNext(); 
+        }
         return false;
     }
 
