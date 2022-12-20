@@ -129,7 +129,7 @@ public class LinkedList<T> implements ListADT<T> {
         }
         // let user know if item to remove is not there 
         if (sizeBefore == size) { 
-            System.out.println("Item to remove is not in the arra"); 
+            System.out.println("Item to remove is not in the list!"); 
         }
     }
 
