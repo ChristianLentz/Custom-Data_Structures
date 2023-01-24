@@ -123,9 +123,12 @@ public class LinkedList<T> implements ListADT<T> {
             }
             // remove the item if it was found 
             if (!toRemove.equals(null)) {
-
-                // NEED TO UPDATE LINKS HERE 
-                
+                // link prev and next of node to remove
+                toRemove.getPrev().setNext(toRemove.getNext());
+                toRemove.getNext().setPrev(toRemove.getPrev()); 
+                // remove prev and next links from node to remove
+                toRemove.setNext(null); 
+                toRemove.setPrev(null); 
                 size--; 
             }
         }
@@ -141,7 +144,8 @@ public class LinkedList<T> implements ListADT<T> {
      */
     public T getByIndex(int index) {
         
-        // FINISH 
+        // FINISH ... loop over list and return number of 
+        // iterations it took to find the item minus 1
 
         return null;
     }
